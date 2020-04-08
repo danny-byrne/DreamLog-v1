@@ -9,7 +9,7 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 const uri = process.env.ATLAS_URI ;
-console.log('uri is', uri)
+
 
 mongoose.connect(uri, 
   { useNewUrlParser: true, 
@@ -24,7 +24,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/events', eventRouter);
-app.use('/user', userRouter)
+app.use('/users', userRouter)
 
 const connection = mongoose.connection;
 

@@ -8,12 +8,17 @@ router.route('/').get((req, res) => {
 })
 
 router.route('/add').post((req, res) => {
-  const eventname = req.body.eventname
+  console.log('in the event/add route, req.body is', req.body)
+  const { event, description, date, type } = req.body;
 
-  const newEvent = new Event({eventname});
+  const newEvent = new Event({event, 
+    description,
+    date,
+    type
+  });
 
   newEvent.save()
-  .then(() => res.json('User added!'))
+  .then(() => res.json('Event added!'))
   .catch(err => res.status(400).json('Error: ' + err))
 });
 
