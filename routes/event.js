@@ -25,4 +25,14 @@ router.route('/add').post((req, res) => {
   .catch(err => res.status(400).json('Error: ' + err))
 });
 
+//update
+router.route('/update').post((req, res) => {
+  console.log('inside event update')
+  
+  const newEvent
+})
+
+
+//delete
+
 module.exports = router;
